@@ -19,7 +19,7 @@ function generatePost(post) {
 	
 	var string = `
 		<div class="post">
-			<h1>${post.caption}</h1>
+			<a class="caption">${post.caption}</a>
 			<img src="${post.media_url}" style="width:100%;">
 		</div>`;
 	return string;
