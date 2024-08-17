@@ -37,7 +37,7 @@ http.createServer((request, response) => {
 				var promises = [];
 				for (var i = 0; i < postsList.length; i++) {
 					 promises.push(new Promise(resolve => {
-						https.get("https://graph.instagram.com/" + postsList[i].id + "?fields=caption,timestamp,media_url&access_token=" + process.env.IG_TOKEN, r => {
+						https.get("https://graph.instagram.com/" + postsList[i].id + "?fields=caption,timestamp,media_url,media_type&access_token=" + process.env.IG_TOKEN, r => {
 							var data = "";
 							r.on("data", function(chunk) {
 								data += chunk;

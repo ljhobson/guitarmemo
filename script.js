@@ -21,11 +21,28 @@ window.onresize = function(event) {
 }
 
 function generatePost(post) {
-	
-	var string = `
+	var string;
+	if (post.media_type === "VIDEO") {
+		string = `
+		<div class="post">
+			<a class="caption" href="https://www.instagram.com/official.guitarmemo/">${post.caption}</a>
+			<video width="400" height="400" controls>
+				<source src=${post.media_url}" type="video/mp4">
+				Your browser does not support HTML video.
+			</video>
+		</div>`;
+	} else if (post.media_type === "CAROUSEL_ALBUM") {
+		string = `
 		<div class="post">
 			<a class="caption" href="https://www.instagram.com/official.guitarmemo/">${post.caption}</a>
 			<img src="${post.media_url}" style="width:100%;">
 		</div>`;
+	} else {
+		string = `
+		<div class="post">
+			<a class="caption" href="https://www.instagram.com/official.guitarmemo/">${post.caption}</a>
+			<img src="${post.media_url}" style="width:100%;">
+		</div>`;
+	}
 	return string;
 }
