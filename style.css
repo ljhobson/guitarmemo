@@ -40,6 +40,20 @@ body {
 	color: #ee8010;
 }
 
+.download {
+	font-family: Sans-Serif;
+	font-size: 28px;
+	text-align: center;
+	color: #ffffff;
+	background-color: #55aaff;
+	margin: 130px auto;
+	margin-top: 40px;
+	padding: 20px;
+	border-radius: 100px;
+	
+	width: fit-content;
+}
+
 .posts {
 	margin: auto;
 	width: fit-content; // irrelevant
@@ -47,12 +61,12 @@ body {
 }
 
 .post {
+	font-family: Sans-Serif;
 	display: inline-block;
 	overflow: hidden;
 	width: 400px;
 	height: 400px;
 	padding: 0px;
-	font-family: Sans-Serif;
 	background-color: #eee;
 	padding: 0px;
 	margin: auto;
