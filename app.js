@@ -37,7 +37,7 @@ http.createServer((request, response) => {
 				var promises = [];
 				for (var i = 0; i < postsList.length; i++) {
 					 promises.push(new Promise(resolve => {
-						https.get("https://graph.instagram.com/" + postsList[i].id + "?fields=caption,media_url&access_token=" + process.env.IG_TOKEN, r => {
+						https.get("https://graph.instagram.com/" + postsList[i].id + "?fields=caption,timestamp,media_url&access_token=" + process.env.IG_TOKEN, r => {
 							var data = "";
 							r.on("data", function(chunk) {
 								data += chunk;
@@ -51,7 +51,7 @@ http.createServer((request, response) => {
 				}
 				Promise.all(promises).then(() => {
 					response.writeHead(200, { "Content-Type": "text/json" });
-					response.end(JSON.stringify(posts));
+					response.end(JSON.stringify(posts.sort((a, b) => new Date(b.timestamp) - new Date(a.timestamp))));
 				});
 			});
 		});

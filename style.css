@@ -23,6 +23,7 @@ body {
 	font-style: italic;
 	text-align: center;
 	line-height: 2;
+	margin-bottom: 15px;
 }
 
 .slogan-heading {
@@ -41,7 +42,8 @@ body {
 
 .posts {
 	margin: auto;
-	width: fit-content;
+	width: fit-content; // irrelevant
+	overflow: hidden;
 }
 
 .post {
@@ -49,13 +51,13 @@ body {
 	overflow: hidden;
 	width: 400px;
 	height: 400px;
-	
+	padding: 0px;
 	font-family: Sans-Serif;
 	background-color: #eee;
 	padding: 0px;
 	margin: auto;
 	border-radius: 5px;
-	margin-top: 15px;
+	margin: 2px 0;
 }
 
 .post .caption {
@@ -67,4 +69,6 @@ body {
 	border-radius: 5px;
 	background-image: linear-gradient(#0009, transparent);
 	width: 370px;
+	
+	text-decoration: none;
 }

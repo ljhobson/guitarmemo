@@ -13,13 +13,18 @@ window.onload = function(event) {
 		}
 	}
 	xhr.send();
+	document.getElementsByClassName("posts")[0].style.width = (window.innerWidth - window.innerWidth%404 - 4) + "px";
+}
+
+window.onresize = function(event) {
+	document.getElementsByClassName("posts")[0].style.width = (window.innerWidth - window.innerWidth%404 - 4) + "px";
 }
 
 function generatePost(post) {
 	
 	var string = `
 		<div class="post">
-			<a class="caption">${post.caption}</a>
+			<a class="caption" href="https://www.instagram.com/official.guitarmemo/">${post.caption}</a>
 			<img src="${post.media_url}" style="width:100%;">
 		</div>`;
 	return string;
