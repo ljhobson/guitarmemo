@@ -23,7 +23,6 @@ window.onload = function(event) {
 		if (recording) {
 			recording = false;
 			this.style.backgroundColor = "#cccccc";
-			document.getElementsByClassName("record-feedback")[0].innerHTML = "<a>Tap to record</a>";
 		} else {
 			recording = true;
 			this.style.backgroundColor = "#ee5522";

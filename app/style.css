@@ -1,6 +1,12 @@
+* {
+	user-select: none;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	touch-action: none;
+}
+
 body {
 	margin: 0;
-	touch-action: none;
 }
 
 .wrapper {
@@ -47,7 +53,7 @@ body {
 	width: 100%;
 	
 	position: absolute;
-	bottom: 25px;
+	bottom: 35px;
 }
 
 .record-feedback {
