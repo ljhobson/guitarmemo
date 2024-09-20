@@ -5,7 +5,7 @@ function isMobile() {
 window.onload = function(event) {
 	if (isMobile()) {
 		document.getElementsByClassName("download")[0].remove();
-		document.getElementsByClassName("info-heading")[0].innerHTML = "<hr>Tap on the share icon below and click <a>Add to Home Screen</a>"";
+		document.getElementsByClassName("info-heading")[0].innerHTML = "<hr>Tap on the share icon below and click <a>Add to Home Screen</a>";
 		document.getElementsByClassName("info")[0].innerHTML = "vvv";
 		return;
 	} else {
