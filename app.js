@@ -25,7 +25,7 @@ http.createServer((request, response) => {
 	
 	if (path.slice(0, 5) === "/app/") { // Check if it's the app
 		var appPath = path.slice(1);
-		if (appPath.length === 5) {
+		if (appPath.length === 4) {
 			fs.readFile(appPath + "index.html", function(error, content) {
 				response.writeHead(200, { "Content-Type": "text/html" });
 				response.end(content); //, "utf-8");
