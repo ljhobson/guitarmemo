@@ -5,8 +5,10 @@ function isMobile() {
 window.onload = function(event) {
 	if (isMobile()) {
 		document.getElementsByClassName("download")[0].remove();
-		document.getElementsByClassName("info-heading")[0].innerHTML = "<hr>Tap on the share icon below and click <a>Add to Home Screen</a>";
-		document.getElementsByClassName("info")[0].innerHTML = "vvv";
+		document.getElementsByClassName("slogan-heading")[0].innerHTML = "Installation Instructions";
+		document.getElementsByClassName("slogan-subheading")[0].innerHTML = `for `;
+		document.getElementsByClassName("info-heading")[0].innerHTML = `<a>1. Click on the Share Icon</a><br><a>2. Tap Add to Home Screen</a>`;
+		document.getElementsByClassName("info")[0].innerHTML = "";
 		return;
 	} else {
 		document.getElementsByClassName("download")[0].innerHTML = `<img src="/qrcode.png">`;
