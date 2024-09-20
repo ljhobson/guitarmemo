@@ -2,9 +2,9 @@
 	"name": "Guitar Memo App",
 	"short_name": "Guitar Memo",
 	"description": "Guitarmemo for mobile",
-	"start_url": "/",
+	"start_url": "/app/",
 	"display": "standalone",
-    "scope": "/",
+    "scope": "/app",
 	"background_color": "#ffffff",
 	"theme_color": "#000000",
 	"icons": [
@@ -13,7 +13,7 @@
 			"sizes": "128x128"
 		},
 		{
-			"src": "/fireimage.png",
+			"src": "/app/fireimage.png",
 			"sizes": "512x512",
 			"type": "image/png"
 		}

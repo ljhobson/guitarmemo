@@ -3,18 +3,42 @@ var https = require("https");
 var fs = require('fs');
 var PORT = process.env.PORT || 8000;
 
+
+var allow = [];
+var maps =  [];
+var types =  [];
+function whitelist(map, type) {
+	allow.push("/" + map);
+	maps.push(map);
+	types.push(type);
+}
+
+// Whitelist a bunch of reasources
+whitelist("style.css", "style/css");
+whitelist("script.js", "text/javascript");
+whitelist("favicon.ico", "image/x-icon");
+whitelist("manifest.json", "json");
+
 http.createServer((request, response) => {
 	var path = request.url;
 	console.log(path);
 	
-	var allow = ["/style.css",	"/script.js",		"/favicon.ico",	"/mobile.js",		"/manifest.json",	"/service-worker.js"];
-	var maps =  ["style.css",	"script.js",		"favicon.ico",	"mobile.js",		"manifest.json",	"service-worker.js"];
-	var type =  ["style/css",	"text/javascript",	"image/x-icon",	"text/javascript",	"json",				"text/javascript"];
-	
-	if (allow.includes(path)) {
+	if (path.slice(0, 5) === "/app/") { // Check if it's the app
+		if (path.length === 5) {
+			fs.readFile(path + "index.html", function(error, content) {
+				response.writeHead(200, { "Content-Type": "text/html" });
+				response.end(content); //, "utf-8");
+			});
+		} else {
+			fs.readFile(path, function(error, content) {
+				response.writeHead(200, { "Content-Type": "text/html" });
+				response.end(content); //, "utf-8");
+			});
+		}
+	} else if (allow.includes(path)) {
 		var allowIndex = allow.indexOf(path);
 		fs.readFile(maps[allowIndex], function(error, content) {
-			response.writeHead(200, { "Content-Type": type[allowIndex] });
+			response.writeHead(200, { "Content-Type": types[allowIndex] });
 			response.end(content); //, "utf-8");
 		});
 	} else if (path === "/posts") {

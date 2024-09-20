@@ -1,0 +1,89 @@
+body {
+	margin: 0;
+	touch-action: none;
+}
+
+.wrapper {
+	font-family: Times New Roman;
+}
+
+.header {
+	background-color: #ff8000;
+	color: #111;
+	padding: 5px 15px;
+}
+
+.body {
+	background-color: #fff;
+	color: #111;
+	padding: 5px
+}
+
+.slogan {
+	font-size: 20px;
+	font-style: italic;
+	text-align: center;
+	line-height: 2;
+	margin-bottom: 15px;
+}
+
+.slogan-heading {
+	font-size: 28px;
+	color: #434343;
+	font-weight: bold;
+}
+
+.slogan-subheading {
+	color: #999999;
+}
+
+.slogan-guitarmemo {
+	color: #ee8010;
+}
+
+.download {
+	font-family: Sans-Serif;
+	font-size: 28px;
+	text-align: center;
+	color: #ffffff;
+	background-color: #55aaff;
+	margin: 130px auto;
+	margin-top: 40px;
+	padding: 20px;
+	border-radius: 100px;
+	
+	width: fit-content;
+}
+
+.posts {
+	margin: auto;
+	width: fit-content; // irrelevant
+	overflow: hidden;
+}
+
+.post {
+	font-family: Sans-Serif;
+	display: inline-block;
+	overflow: hidden;
+	width: 400px;
+	height: 400px;
+	padding: 0px;
+	background-color: #eee;
+	padding: 0px;
+	margin: auto;
+	border-radius: 5px;
+	margin: 2px 0;
+}
+
+.post .caption {
+	position: absolute;
+	padding: 15px;
+	color: #fff;
+	text-shadow: 2px 2px 4px #000000;
+	
+	border-radius: 5px;
+	background-image: linear-gradient(#0009, transparent);
+	width: 370px;
+	
+	text-decoration: none;
+}
