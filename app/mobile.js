@@ -10,3 +10,25 @@ document.addEventListener('touchstart', function (event) {
 		event.preventDefault();
 	}
 });
+
+var recording = false;
+
+window.onload = function(event) {
+	var recordButton = document.getElementsByClassName("record-button")[0]
+	recordButton.addEventListener('touchstart', function(event) {
+		//this.style.backgroundColor = "#ee5522";
+		event.preventDefault();
+	});
+	recordButton.addEventListener('touchend', function(event) {
+		if (recording) {
+			recording = false;
+			this.style.backgroundColor = "#cccccc";
+			document.getElementsByClassName("record-feedback")[0].innerHTML = "<a>Tap to record</a>";
+		} else {
+			recording = true;
+			this.style.backgroundColor = "#ee5522";
+			document.getElementsByClassName("record-feedback")[0].innerHTML = "";
+		}
+		event.preventDefault();
+	});
+}
