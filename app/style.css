@@ -2,11 +2,11 @@
 	user-select: none;
 	-webkit-user-select: none;
 	-moz-user-select: none;
-	touch-action: none;
 }
 
 body {
 	margin: 0;
+	touch-action: none;
 }
 
 .wrapper {
