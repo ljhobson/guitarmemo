@@ -7,19 +7,14 @@ http.createServer((request, response) => {
 	var path = request.url;
 	console.log(path);
 	
-	if (path === "/style.css") {
-		fs.readFile("style.css", function(error, content) {
-			response.writeHead(200, { "Content-Type": "style/css" });
-			response.end(content); //, "utf-8");
-		});
-	} else if (path === "/script.js") {
-		fs.readFile("script.js", function(error, content) {
-			response.writeHead(200, { "Content-Type": "style/css" });
-			response.end(content); //, "utf-8");
-		});
-	} else if (path === "/favicon.ico") {
-		fs.readFile("favicon.ico", function(error, content) {
-			response.writeHead(200, { "Content-Type": "image/x-icon" });
+	var allow = ["/style.css",	"/script.js",		"/favicon.ico",	"/mobie.js",		"/manifest.json",	"/service-worker.js"];
+	var maps =  ["style.css",	"script.js",		"favicon.ico",	"mobie.js",			"manifest.json",	"service-worker.js"]];
+	var type =  ["style/css",	"text/javascript",	"image/x-icon",	"text/javascript",	"json",				"text/javascript"]];
+	
+	if (allow.includes(path)) {
+		var allowIndex = allow.indexOf(path);
+		fs.readFile(maps[allowIndex], function(error, content) {
+			response.writeHead(200, { "Content-Type": type[allowIndex] });
 			response.end(content); //, "utf-8");
 		});
 	} else if (path === "/posts") {
