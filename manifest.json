@@ -1,6 +1,6 @@
 {
 	"name": "Guitar Memo App",
-	"short_name": "Guitarmemo",
+	"short_name": "Guitar Memo",
 	"description": "Guitarmemo for mobile",
 	"start_url": "/",
 	"display": "standalone",
