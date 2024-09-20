@@ -24,14 +24,15 @@ http.createServer((request, response) => {
 	console.log(path);
 	
 	if (path.slice(0, 5) === "/app/") { // Check if it's the app
-		if (path.length === 5) {
-			fs.readFile(path + "index.html", function(error, content) {
+		var appPath = path.slice(1);
+		if (appPath.length === 5) {
+			fs.readFile(appPath + "index.html", function(error, content) {
 				response.writeHead(200, { "Content-Type": "text/html" });
 				response.end(content); //, "utf-8");
 			});
 		} else {
-			fs.readFile(path, function(error, content) {
-				response.writeHead(200, { "Content-Type": "text/html" });
+			fs.readFile(appPath, function(error, content) {
+				response.writeHead(200);
 				response.end(content); //, "utf-8");
 			});
 		}
