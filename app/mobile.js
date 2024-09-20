@@ -3,3 +3,10 @@ if (!navigator.serviceWorker.controller) {
 		console.log("Service worker has been registered for scope: " + registration.scope);
 	});
 }
+
+// Prevent double-tap zoom on buttons
+document.addEventListener('touchstart', function (event) {
+	if (event.touches.length > 1) {
+		event.preventDefault();
+	}
+});

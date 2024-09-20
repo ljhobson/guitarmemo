@@ -17,6 +17,7 @@ function whitelist(map, type) {
 whitelist("style.css", "style/css");
 whitelist("script.js", "text/javascript");
 whitelist("favicon.ico", "image/x-icon");
+whitelist("qrcode.png", "image/png");
 whitelist("manifest.json", "json");
 
 http.createServer((request, response) => {

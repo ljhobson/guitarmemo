@@ -1,4 +1,14 @@
+function isMobile() {
+	return /Mobi|Android/i.test(navigator.userAgent);
+}
+
 window.onload = function(event) {
+	if (isMobile()) {
+		document.getElementsByClassName("download")[0].remove();
+		document.getElementsByClassName("info-heading")[0].innerHTML = "<hr>Installation Instructions";
+		document.getElementsByClassName("info")[0].innerHTML = "Tap on the share icon below and click <a>Add to Home Screen</a>";
+		return;
+	}
 	var xhr = new XMLHttpRequest();
 	xhr.open("GET", window.location.href + "posts");
 	xhr.onload = function() {
