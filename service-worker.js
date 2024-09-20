@@ -1,13 +1,12 @@
 self.addEventListener('install', event => {
 	event.waitUntil(
-		caches.open('my-pwa-cache').then(cache => {
+		caches.open('offline').then(cache => {
 			return cache.addAll([
 				'/',
 				'/index.html',
 				'/styles.css',
 				'/app.js',
-				'/icons/icon-192x192.png',
-				'/icons/icon-512x512.png'
+				'/favicon.ico'
 			]);
 		})
 	);

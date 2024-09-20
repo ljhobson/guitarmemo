@@ -18,6 +18,11 @@ http.createServer((request, response) => {
 			response.end(content); //, "utf-8");
 		});
 	} else if (path === "/posts") {
+		if (process.env.IG_TOKEN === undefined) {
+			response.writeHead(500, { "Content-Type": "text/html" });
+			response.end(":)");
+			return;
+		}
 		https.get("https://graph.instagram.com/me?fields=id,username,media&access_token=" + process.env.IG_TOKEN, res => {
 			console.log('Status Code:', res.statusCode);
 			var body = "";
