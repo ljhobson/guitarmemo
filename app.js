@@ -7,8 +7,8 @@ http.createServer((request, response) => {
 	var path = request.url;
 	console.log(path);
 	
-	var allow = ["/style.css",	"/script.js",		"/favicon.ico",	"/mobie.js",		"/manifest.json",	"/service-worker.js"];
-	var maps =  ["style.css",	"script.js",		"favicon.ico",	"mobie.js",			"manifest.json",	"service-worker.js"];
+	var allow = ["/style.css",	"/script.js",		"/favicon.ico",	"/mobile.js",		"/manifest.json",	"/service-worker.js"];
+	var maps =  ["style.css",	"script.js",		"favicon.ico",	"mobile.js",		"manifest.json",	"service-worker.js"];
 	var type =  ["style/css",	"text/javascript",	"image/x-icon",	"text/javascript",	"json",				"text/javascript"];
 	
 	if (allow.includes(path)) {
