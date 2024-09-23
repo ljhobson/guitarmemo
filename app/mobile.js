@@ -18,6 +18,7 @@ window.onload = function(event) {
 	recordButton.addEventListener('touchstart', function(event) {
 		this.style.backgroundColor = "#ee5522";
 		event.preventDefault();
+		alert("you pressed the button and it registered");
 	});
 	recordButton.addEventListener('touchend', function(event) {
 		if (recording) {
@@ -30,4 +31,5 @@ window.onload = function(event) {
 		}
 		event.preventDefault();
 	});
+	alert("theoretically the button stuff should be set up now");
 }
