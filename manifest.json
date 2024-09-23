@@ -9,11 +9,7 @@
 	"theme_color": "#000000",
 	"icons": [
 		{
-			"src": "/favicon.ico",
-			"sizes": "128x128"
-		},
-		{
-			"src": "/app/fireimage.png",
+			"src": "/app/guitarmemo.png",
 			"sizes": "512x512",
 			"type": "image/png"
 		}
