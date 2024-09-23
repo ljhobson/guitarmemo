@@ -29,7 +29,7 @@ window.onload = function(event) {
 			this.style.backgroundColor = "#ee5522";
 			document.getElementsByClassName("record-feedback")[0].innerHTML = "";
 			document.getElementsByClassName("record-canvas")[0].style = "display:block;";
-			startRecording();
+			//startRecording();
 		}
 		event.preventDefault();
 	});
@@ -37,7 +37,7 @@ window.onload = function(event) {
 	canvas.width = 300;
 	canvas.height = 50;
 	
-	promptRecordingPermissions();
+	//promptRecordingPermissions();
 }
 
 var canvas;
