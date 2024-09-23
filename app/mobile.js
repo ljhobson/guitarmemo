@@ -31,3 +31,5 @@ window.onload = function(event) {
 		event.preventDefault();
 	});
 }
+
+alert("I have been loaded!");
