@@ -33,7 +33,11 @@ http.createServer((request, response) => {
 			});
 		} else {
 			fs.readFile(appPath, function(error, content) {
-				response.writeHead(200);
+				if (appPath.slice(-3) === ".js") {
+					response.writeHead(200, { "Content-Type": "text/javascript" });
+				} else {
+					response.writeHead(200);
+				}
 				response.end(content); //, "utf-8");
 			});
 		}
