@@ -78,7 +78,7 @@ async function promptRecordingPermissions() {
 		alert('Microphone access granted:', stream);
 		// You can now use the stream
 	} catch (error) {
-		alert('Microphone access denied:', error);
+		alert('Microphone access denied:', error.message);
 		// Handle error (e.g., inform the user)
 	}
 }
