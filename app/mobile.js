@@ -72,20 +72,14 @@ function recordRender() {
 	recordFrame++;
 }
 
-function promptRecordingPermissions() {
-	if (navigator.permissions) {
-		navigator.permissions.query({ name: 'microphone' }).then(function(permissionStatus) {
-			alert(permissionStatus.state);
-			// Prompt for permission
-			try {
-				const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
-				alert('Microphone access granted:', stream);
-				// You can now use the stream
-			} catch (error) {
-				alert('Microphone access denied:', error);
-				// Handle error (e.g., inform the user)
-			}
-		});
+async function promptRecordingPermissions() {
+	try {
+		const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
+		alert('Microphone access granted:', stream);
+		// You can now use the stream
+	} catch (error) {
+		alert('Microphone access denied:', error);
+		// Handle error (e.g., inform the user)
 	}
 }
 
