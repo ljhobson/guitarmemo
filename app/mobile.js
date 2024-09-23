@@ -1,8 +1,12 @@
-//if (!navigator.serviceWorker.controller) {
-//	navigator.serviceWorker.register("/app/service-worker.js").then(function(registration) {
-//		console.log("Service worker has been registered for scope: " + registration.scope);
-//	});
-//}
+if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.getRegistrations().then(function(registrations) {
+        if (registrations.length === 0) {
+            navigator.serviceWorker.register("/app/service-worker.js").then(function(registration) {
+                console.log("Service worker has been registered for scope: " + registration.scope);
+            });
+        }
+    });
+}
 
 // Prevent double-tap zoom on buttons
 document.addEventListener('touchstart', function (event) {
