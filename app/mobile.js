@@ -76,9 +76,9 @@ function promptRecordingPermissions() {
 	if (navigator.permissions) {
 		navigator.permissions.query({ name: 'microphone' }).then(function(permissionStatus) {
 			if (permissionStatus.state === 'granted') {
-				console.log('Microphone access granted');
+				alert('Microphone access granted');
 			} else {
-				console.log('Microphone access is not granted yet.');
+				alert('Microphone access is not granted yet.');
 			}
 			// Prompt for permission
 			navigator.mediaDevices.getUserMedia({ audio: true }).then(stream => {
@@ -99,7 +99,7 @@ function promptRecordingPermissions() {
 					const audioBlob = new Blob(audioChunks, { type: 'audio/wav' });
 					const audioUrl = URL.createObjectURL(audioBlob);
 					
-					console.log("recording stopped");
+					alert("recording stopped");
 					
 					// Optionally play the recorded audio or save it
 					const audio = new Audio(audioUrl);
