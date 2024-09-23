@@ -77,34 +77,14 @@ function promptRecordingPermissions() {
 		navigator.permissions.query({ name: 'microphone' }).then(function(permissionStatus) {
 			alert(permissionStatus.state);
 			// Prompt for permission
-			navigator.mediaDevices.getUserMedia({ audio: true }).then(stream => {
-				// Create a MediaRecorder instance
-				mediaRecorder = new MediaRecorder(stream);
-
-				// Store audio chunks
-				audioChunks = [];
-
-				// Event: data available (when audio is captured)
-				mediaRecorder.ondataavailable = event => {
-					audioChunks.push(event.data);
-				};
-
-				// Event: stop recording
-				mediaRecorder.onstop = () => {
-					// Create a Blob from the recorded audio
-					const audioBlob = new Blob(audioChunks, { type: 'audio/wav' });
-					const audioUrl = URL.createObjectURL(audioBlob);
-					
-					alert("recording stopped");
-					
-					// Optionally play the recorded audio or save it
-					const audio = new Audio(audioUrl);
-					audio.play();
-
-					// Reset chunks for future recordings
-					audioChunks = [];
-				};
-			});
+			try {
+				const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
+				console.log('Microphone access granted:', stream);
+				// You can now use the stream
+			} catch (error) {
+				console.error('Microphone access denied:', error);
+				// Handle error (e.g., inform the user)
+			}
 		});
 	}
 }
