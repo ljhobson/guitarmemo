@@ -78,35 +78,32 @@ body {
 	width: fit-content;
 }
 
-.posts {
-	margin: auto;
-	width: fit-content; // irrelevant
-	overflow: hidden;
+.record-canvas {
+	border: 1px solid black;
+	display: none;
+	margin: 30px auto;
 }
 
-.post {
-	font-family: Sans-Serif;
-	display: inline-block;
-	overflow: hidden;
-	width: 400px;
-	height: 400px;
-	padding: 0px;
-	background-color: #eee;
-	padding: 0px;
-	margin: auto;
-	border-radius: 5px;
-	margin: 2px 0;
-}
 
-.post .caption {
-	position: absolute;
-	padding: 15px;
-	color: #fff;
-	text-shadow: 2px 2px 4px #000000;
-	
-	border-radius: 5px;
-	background-image: linear-gradient(#0009, transparent);
-	width: 370px;
-	
-	text-decoration: none;
-}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
