@@ -6,6 +6,9 @@ if (!navigator.serviceWorker.controller) {
 	});
 }
 
+alert("this is after the service worker stuff");
+
+
 // Prevent double-tap zoom on buttons
 document.addEventListener('touchstart', function (event) {
 	if (event.touches.length > 1) {
@@ -36,3 +39,5 @@ window.onload = function(event) {
 	});
 	alert("theoretically the button stuff should be set up now");
 }
+
+alert("this is at the end of the page");
