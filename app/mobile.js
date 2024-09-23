@@ -75,11 +75,7 @@ function recordRender() {
 function promptRecordingPermissions() {
 	if (navigator.permissions) {
 		navigator.permissions.query({ name: 'microphone' }).then(function(permissionStatus) {
-			if (permissionStatus.state === 'granted') {
-				alert('Microphone access granted');
-			} else {
-				alert('Microphone access is not granted yet.');
-			}
+			alert(permissionStatus.state);
 			// Prompt for permission
 			navigator.mediaDevices.getUserMedia({ audio: true }).then(stream => {
 				// Create a MediaRecorder instance
