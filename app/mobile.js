@@ -1,3 +1,5 @@
+alert("this is right at the start of the page");
+
 if (!navigator.serviceWorker.controller) {
 	navigator.serviceWorker.register("/app/service-worker.js").then(function(registration) {
 		console.log("Service worker has been registered for scope: " + registration.scope);
@@ -14,6 +16,7 @@ document.addEventListener('touchstart', function (event) {
 var recording = false;
 
 window.onload = function(event) {
+	alert("setting up the buttons now");
 	var recordButton = document.getElementsByClassName("record-button")[0]
 	recordButton.addEventListener('touchstart', function(event) {
 		this.style.backgroundColor = "#ee5522";
