@@ -33,5 +33,6 @@ window.onload = function(event) {
 	});
 }
 */
-
-alert("I have been loaded!");
+window.onload = function(event) {
+	alert("I have been loaded!");
+}
