@@ -3,7 +3,7 @@ function isMobile() {
 }
 
 window.onload = function(event) {
-	if (isMobile()) {
+	if (isMobile() && false) {
 		document.getElementsByClassName("download")[0].remove();
 		document.getElementsByClassName("slogan-heading")[0].innerHTML = "Installation Instructions";
 		document.getElementsByClassName("slogan-subheading")[0].innerHTML = `for `;
